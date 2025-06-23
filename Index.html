@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sir Makau Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="Images/a3.jpg" type="image/jpeg" style="border-radius:50%;" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo" aria-label="Sir Makau Portfolio Home">Sir Makau Portfolio</a>
+            <div class="hamburger" aria-label="Toggle navigation" tabindex="0">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" tabindex="0">Home</a></li>
+                <li><a href="#projects" tabindex="0">Projects</a></li>
+                <li><a href="#skills" tabindex="0">Skills</a></li>
+                <li><a href="#about" tabindex="0">About</a></li>
+                <li><a href="#contact" tabindex="0">Contact</a></li>
+                <li>
+                    <div class="darkmode-switch" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span>LIGHT</span>
+                        <label class="switch" style="position: relative; display: inline-block; width: 40px; height: 20px;">
+                            <input type="checkbox" name="toggle-darkmode" id="toggle-darkmode" style="opacity:0;width:0;height:0;">
+                            <div style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #ccc; border-radius: 20px; transition: .4s;">
+                    <span style="position: absolute; height: 16px; width: 16px; left: 2px; bottom: 2px; background: rgb(245, 241, 241); border-radius: 50%; transition: .4s;"></span>
+                            </div>
+                        </label>
+                        <span>DARK</span>
+                    </div>
+                </li>
+                <script>
+                    // Light/Dark mode toggle using switch
+                    const toggle = document.getElementById('toggle-darkmode');
+                    function setMode(isDark) {
+                        if (isDark) {
+                            document.body.classList.add('dark-mode');
+                            document.body.style.background = '';
+                        } else {
+                            document.body.classList.remove('dark-mode');
+                            document.body.style.background = '#fff';
+                        }
+                        toggle.checked = isDark;
+                    }
+                    let isDark = localStorage.getItem('mode') === 'dark';
+                    setMode(isDark);
+                    toggle.addEventListener('change', () => {
+                        isDark = toggle.checked;
+                        setMode(isDark);
+                        localStorage.setItem('mode', isDark ? 'dark' : 'light');
+                    });
+                </script>
+                <style>
+                    .switch input:checked + div {
+                        background: #222;
+                        color: #171111;
+                    }
+                    .switch div span {
+                        left: 2px;
+                        transition: .4s;
+                    }
+                    .switch input:checked + div span {
+                        transform: translateX(20px);
+                        background: #4fc3f7;
+                    }
+                    .dark-mode {
+                        background: #0d0f14 !important;
+                        color: #e5d6d6;
+                    }
+                </style>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+                <img src="Images/a3.jpg" alt="Profile Photo" style="width:160px;height:160px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+                <div>
+                    <h1>
+                        <span class="highlight">Hi, I'm Sir Makau</span>
+                    </h1>
+                    <p>
+                        <strong>Full‑Stack Developer</strong> | <strong>Cybersecurity Specialist</strong> | <strong>AI Enthusiast</strong>
+                    </p>
+                    <p>
+                        I build secure, scalable, and intelligent digital solutions for businesses and individuals.
+                    </p>
+                    <a href="#projects" class="btn" style="margin-top:1rem;">View My Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Languages</h3>
+                    <p>JavaScript, Python, PHP, Java, C#, SQL</p>
+                </div>
+                <div class="card">
+                    <h3>Frameworks</h3>
+                    <p>React, Node.js, Express, Django, Laravel, .NET</p>
+                </div>
+                <div class="card">
+                    <h3>Cybersecurity</h3>
+                    <p>Penetration Testing, Security Audits, Compliance, vCISO</p>
+                </div>
+                <div class="card">
+                    <h3>AI & Automation</h3>
+                    <p>GPT Integrations, Chatbots, Prompt Engineering, Workflow Automation</p>
+                </div>
+                <div class="card">
+                    <h3>Cloud & DevOps</h3>
+                    <p>AWS, Azure, GCP, Docker, CI/CD, SRE</p>
+                </div>
+                <div class="card">
+                    <h3>Other</h3>
+                    <p>UI/UX Design, API Development, Agile, Team Leadership</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>E-commerce Chatbot</h3>
+                    <p>AI-powered chatbot for online stores. <a href="https://github.com/sirmakau24/E-commerce-chatbot" target="_blank" rel="noopener">GitHub</a></p>
+                </div>
+                <div class="card">
+                    <h3>Secure Web Platform</h3>
+                    <p>Robust, scalable web platform with advanced security features.</p>
+                </div>
+                <div class="card">
+                    <h3>Mobile Banking App</h3>
+                    <p>Cross-platform app for secure digital banking.</p>
+                </div>
+                <div class="card">
+                    <h3>Penetration Testing Toolkit</h3>
+                    <p>Automated toolkit for security assessments and reporting.</p>
+                </div>
+                <div class="card">
+                    <h3>Custom GPT Integrations</h3>
+                    <p>Smart assistants and workflow automation for businesses.</p>
+                </div>
+            </div>
+            <p style="margin-top:1rem;"><b>More on <a href="https://github.com/sirmakau24" target="_blank" rel="noopener">GitHub</a></b></p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-description">
+                I'm a passionate developer and cybersecurity expert with a strong background in building secure, scalable, and innovative digital solutions. My mission is to empower businesses and individuals with technology that makes a difference.
+            </p>
+            <ul>
+                <li>5+ years experience in software development and cybersecurity</li>
+                <li>Worked with startups, corporates, and NGOs</li>
+                <li>Open-source contributor and tech community advocate</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-description">
+                Interested in working together or have a question? Let's connect!
+            </p>
+            <form action="#" method="post" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
+                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email" />
+                <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="footer-info" style="margin-top:1.5rem;">
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width:24px; vertical-align:middle;">
+                </a>
+                <a href="https://github.com/sirmakau24" target="_blank" rel="noopener" aria-label="GitHub">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width:24px; vertical-align:middle;">
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter" style="width:24px; vertical-align:middle;">
+                </a>
+                <a href="mailto:solutions@sirmakau.com" aria-label="Email">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email" style="width:24px; vertical-align:middle;">
+                </a>
+                <a href="https://wa.me/254716796834" class="whatsapp-chat" target="_blank" style="width:24px; vertical-align:middle;" aria-label="WhatsApp">
+                    💬 Chat with Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer">
+        <div>
+            <h3>Let’s build something great together.</h3>
+            <p>&copy; 2025 Sir Makau. All rights reserved.</p>
+            <p>Designed & Developed by <a href="https://github.com/sirmakau24" target="_blank" rel="noopener" style="color:#4fc3f7;">Sir Makau</a></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
+</html>
