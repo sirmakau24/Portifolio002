@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Brian Makau</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>BM</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4RhisWq5VQ5Vj1iS3Qz8aG4CkXbkqVKgf/mBlC9ZwTe74MkRUZ6PFlJwZQ+o8z+e2dg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BM</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h1 class="section-title">Let's Connect</h1>
+            <p class="section-subtitle">Get in touch for collaborations or just to say hello!</p>
+
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                            <span class="form-error" id="name-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <span class="form-error" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                            <span class="form-error" id="message-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" style="display: none;">
+                                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+                                        <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+                                        <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+                                    </circle>
+                                </svg>
+                                Sending...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <h2 class="contact-info-title">Get In Touch</h2>
+                        <p class="contact-info-text">
+                            I'm always interested in new opportunities and collaborations. 
+                            Whether you have a project in mind or just want to chat about technology, 
+                            feel free to reach out!
+                        </p>
+                        
+                        <ul class="contact-info">
+                            <li><strong>Email:</strong> <a href="mailto:sirmakau24@gmail.com">sirmakau24@gmail.com</a></li>
+                            <li><strong>Phone:</strong> <a href="tel:+254716796834">+254 716 796 834</a></li>
+                            <li><strong>Location:</strong> Nairobi, Kenya</li>
+                        </ul>
+
+                        <div class="social-links full">
+                            <a href="https://linkedin.com/in/brianm9681" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com/sirmakau24" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://x.com/Sirmakau24?t=tzNFzkgTbXB0O5xns2kyXQ&s=09" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+                            <a href="https://sirmakau24.github.io/ProfileCard/" target="_blank" aria-label="Profile Card"><i class="fa-solid fa-id-card"></i> Profile Card</a>
+                            <a href="https://www.instagram.com/sirmakau24?igsh=MXV2ZGhwZnh5YTNjZA==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://wa.me/0716796834" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            <a href="https://pin.it/6ueSojJ5w" target="_blank" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i> Pinterest</a>
+                            <a href="https://www.linkedin.com/in/sirmakau24" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn (Alt)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scroll-top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>
+
