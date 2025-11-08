@@ -58,9 +58,11 @@ function initProjectHoverEffects() {
 }
 
 function initProjectFiltering() {
-    // Add filter buttons if they don't exist
     const projectsContainer = document.querySelector('.projects-grid');
     if (!projectsContainer) return;
+    
+    // Prevent inserting duplicate filter container
+    if (document.querySelector('.project-filters')) return;
     
     const filterContainer = document.createElement('div');
     filterContainer.className = 'project-filters';
@@ -74,29 +76,28 @@ function initProjectFiltering() {
     // Insert filter buttons before projects grid
     projectsContainer.parentNode.insertBefore(filterContainer, projectsContainer);
     
-    // Add filter functionality
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filter = this.getAttribute('data-filter');
+    // Use event delegation to avoid attaching duplicate handlers
+    filterContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        // Update active button
+        filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filter projects
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
             
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Filter projects
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeInUp 0.6s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            if (filter === 'all' || category === filter) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeInUp 0.6s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
         });
     });
 }

@@ -1,7 +1,9 @@
 /* Projects Page Styles */
 .projects {
     padding: 120px 0 100px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    position: relative;
+    color: #f1f1f1;
 }
 
 .projects-grid {
@@ -12,7 +14,7 @@
 }
 
 .project-card {
-    background: white;
+    background: #1a1a2e;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 119, 182, 0.1);
@@ -36,6 +38,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project-card:hover .project-img {
@@ -44,11 +47,8 @@
 
 .project-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 119, 182, 0.9), rgba(2, 62, 138, 0.9));
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 119, 182, 0.85), rgba(2, 62, 138, 0.85));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,8 +69,8 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: white;
-    color: #0077b6;
+    background: #00b4d8;
+    color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     text-decoration: none;
@@ -78,14 +78,13 @@
     font-weight: 500;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
 }
 
 .project-link:hover {
     background: #0077b6;
-    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
 }
 
 .project-content {
@@ -93,14 +92,18 @@
 }
 
 .project-title {
-    color: #333;
+    color: #c77dff; /* fallback */
+    background: linear-gradient(135deg, #6a00f4 0%, #8e2de2 50%, #c77dff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .project-description {
-    color: #666;
+    color: #b5b5b5;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     font-size: 1rem;
@@ -113,25 +116,25 @@
 }
 
 .tech-tag {
-    background: linear-gradient(135deg, #caf0f8, #e3f2fd);
-    color: #0077b6;
+    background: linear-gradient(135deg, #023e8a, #0077b6);
+    color: #f1f1f1;
     padding: 0.4rem 1rem;
     border-radius: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 0.8rem;
-    border: 1px solid rgba(0, 119, 182, 0.2);
+    border: 1px solid rgba(0, 180, 216, 0.3);
     transition: all 0.3s ease;
 }
 
 .tech-tag:hover {
-    background: linear-gradient(135deg, #0077b6, #023e8a);
-    color: white;
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
 }
 
-/* Project Categories Filter (if needed in future) */
+/* Filters (future use) */
 .project-filters {
     display: flex;
     justify-content: center;
@@ -141,9 +144,9 @@
 }
 
 .filter-btn {
-    background: white;
-    color: #0077b6;
-    border: 2px solid #0077b6;
+    background: transparent;
+    color: #00b4d8;
+    border: 2px solid #00b4d8;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     font-family: 'Poppins', sans-serif;
@@ -154,13 +157,13 @@
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: #0077b6;
-    color: white;
+    background: #00b4d8;
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
 }
 
-/* Loading Animation */
+/* Animations */
 .project-card.loading {
     opacity: 0;
     transform: translateY(30px);
@@ -174,7 +177,6 @@
     }
 }
 
-/* Staggered Animation */
 .project-card:nth-child(1) { animation-delay: 0.1s; }
 .project-card:nth-child(2) { animation-delay: 0.2s; }
 .project-card:nth-child(3) { animation-delay: 0.3s; }
@@ -186,61 +188,35 @@
     .projects {
         padding: 100px 0 80px;
     }
-
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
     .project-card {
         margin: 0 auto;
         max-width: 400px;
     }
-
     .project-content {
         padding: 1.5rem;
     }
-
     .project-title {
         font-size: 1.3rem;
     }
-
     .project-description {
         font-size: 0.95rem;
-    }
-
-    .project-filters {
-        gap: 0.8rem;
-    }
-
-    .filter-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
     .project-image {
         height: 200px;
     }
-
-    .project-content {
-        padding: 1.2rem;
-    }
-
     .project-link {
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
     }
-
     .tech-tag {
         padding: 0.3rem 0.8rem;
         font-size: 0.75rem;
     }
 }
-
